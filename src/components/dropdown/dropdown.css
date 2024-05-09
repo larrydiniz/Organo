@@ -1,0 +1,25 @@
+.dropdown {
+  margin: 24px 0;
+}
+
+.dropdown label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.dropdown select {
+  background-color: #fff;
+  box-shadow: 3px 3px 8px rgba(180, 180, 180, 0.6);
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  border-right: 16px solid transparent;
+}
+
+::-webkit-input-placeholder {
+  color: #b5b5b5;
+}

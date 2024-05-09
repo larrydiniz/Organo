@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Banner } from "./components/banner";
+import { Form } from "./components/form";
+import { Team } from "./components/team";
+import { teams } from "./common/constants";
 
 function App() {
+  const [employees, setEmployees] = useState([]);
+
+  const newEmployee = (employee) => {
+    console.log(employee);
+    setEmployees([...employees, employee]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Banner />
+      <Form registeredEmployee={(employee) => newEmployee(employee)} />
+      {teams.map((team) => {
+        const { name, primaryColor, secondaryColor } = team;
+        return (
+          <Team
+            key={name}
+            name={name}
+            primaryColor={primaryColor}
+            secondaryColor={secondaryColor}
+            employees={employees.filter(
+              (employee) => employee.team === team.name
+            )}
+          />
+        );
+      })}
     </div>
   );
 }
