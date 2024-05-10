@@ -9,7 +9,7 @@ export const Form = (props) => {
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [image, setImage] = useState("");
-  const [team, setTeam] = useState("Programação");
+  const [team, setTeam] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,6 +19,10 @@ export const Form = (props) => {
       image,
       team,
     });
+    setName("");
+    setRole("");
+    setImage("");
+    setTeam("");
   };
 
   return (

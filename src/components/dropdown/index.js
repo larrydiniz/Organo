@@ -4,7 +4,11 @@ export const Dropdown = (props) => {
   return (
     <div className="dropdown">
       <label>{props.label}</label>
-      <select onChange={(event) => props.setValue(event.target.value)}>
+      <select
+        onChange={(event) => props.setValue(event.target.value)}
+        value={props.value}
+      >
+        <option value="" />
         {props.items.map((item) => {
           return <option key={item.name}>{item.name}</option>;
         })}

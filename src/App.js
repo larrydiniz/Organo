@@ -3,12 +3,12 @@ import { Banner } from "./components/banner";
 import { Form } from "./components/form";
 import { Team } from "./components/team";
 import { teams } from "./common/constants";
+import { Footer } from "./components/footer";
 
 function App() {
   const [employees, setEmployees] = useState([]);
 
   const newEmployee = (employee) => {
-    console.log(employee);
     setEmployees([...employees, employee]);
   };
 
@@ -30,6 +30,7 @@ function App() {
           />
         );
       })}
+      <Footer />
     </div>
   );
 }
