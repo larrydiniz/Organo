@@ -9,6 +9,7 @@ function App() {
   const [employees, setEmployees] = useState([]);
 
   const newEmployee = (employee) => {
+    debugger;
     setEmployees([...employees, employee]);
   };
 
